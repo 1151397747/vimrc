@@ -13,8 +13,9 @@ set foldmethod=marker
 set foldlevel=100  " 启动vim时不要自动折叠代码
 set textwidth=80
 set formatoptions+=t
-set cindent
-set smartindent
+set sw=4 sts=4 et
+"set cindent
+"set smartindent
 set noerrorbells
 set showmatch
 set nobackup 
@@ -214,6 +215,7 @@ endif
 " nerdtree:right 
 "--------------------------------------------------------------------------------
 let g:NERDTreeWinPos = "right"
+nmap <F10> :NERDTreeToggle<CR>
 
 "--------------------------------------------------------------------------------
 " 选择molokai的模式 
@@ -226,3 +228,10 @@ set t_Co=256
 set background=dark
 colorscheme  molokai
 set tabstop=4
+
+
+"--------------------------------------------------------------------------------
+" 批量注释 
+"--------------------------------------------------------------------------------
+map ;' mz'aO<Esc>i#if 0<Esc>'zo<Esc>i#endif<Esc>
+
